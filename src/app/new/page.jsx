@@ -2,8 +2,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
-const NewPage = () => {
-
+const NewPage = ({params}) => {
   const router = useRouter()
 
   const [task, setTask] = useState({
