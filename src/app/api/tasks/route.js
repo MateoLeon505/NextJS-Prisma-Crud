@@ -5,7 +5,7 @@ const GET = async () => {
     const tasks = await prisma.task.findMany()
 
     return NextResponse.json({
-        type: `Getting Tasks`,
+        type: `Getting All Tasks`,
         data: tasks
     })
 }

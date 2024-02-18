@@ -1,7 +1,17 @@
 import { NextResponse } from "next/server"
+import { prisma } from "@/libs/prisma"
 
 const GET = async (request, {params}) => {
-    return NextResponse.json(`Getting task ${params.id}`)   
+    const id = parseInt(params.id)
+    const task = await prisma.task.findUnique({
+        where: {
+            id : id
+        }
+    })
+    return NextResponse.json({
+        type: `Getting task ${params.id}`,
+        data: task
+    })   
 }
 
 const PUT = async (request, {params}) => {
