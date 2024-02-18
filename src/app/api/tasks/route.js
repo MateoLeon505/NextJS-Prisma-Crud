@@ -1,7 +1,11 @@
 const { NextResponse } = require("next/server")
 
 const GET = () => {
-    return NextResponse.json("TaskS GET")
+    return NextResponse.json("Getting Tasks")
 }
 
-export {GET}
+const POST = () => {
+    return NextResponse.json("Creating Tasks")
+}
+
+export {GET, POST}
