@@ -18,7 +18,7 @@ const NewPage = () => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault
+    e.preventDefault()
     const title = task.title
     const description = task.description
 
