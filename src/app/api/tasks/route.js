@@ -4,9 +4,10 @@ import { prisma } from "@/libs/prisma"
 const GET = async () => {
     try {
         const tasks = await prisma.task.findMany()
+        // console.log(tasks);
         return NextResponse.json({
             type: `Getting All Tasks`,
-            data: tasks.length > 0 ? tasks : 'There are no tasks'
+            data: tasks
         })   
     } 
     catch (error) {
