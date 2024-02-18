@@ -1,7 +1,10 @@
 "use client"
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 const NewPage = () => {
+
+  const router = useRouter()
 
   const [task, setTask] = useState({
     title: '',
@@ -27,12 +30,13 @@ const NewPage = () => {
       }
     })
     const data = await res.json()
-    console.log(data );
+    console.log(data)
+    router.push('/')
   } 
 
   return (
     <div className='h-screen flex justify-center items-center'>
-      <form className='bg-slate-800 p-10 w-1/4' onSubmit={handleSubmit}>
+      <form className='bg-slate-800 p-10 sm:w-1/2 lg:w-1/4' onSubmit={handleSubmit}>
 
         <label htmlFor="title" className='text-sm font-bold'>Task Title</label>
         <input type="text" id='title' name='title' placeholder='Title' onChange={handleChange}
