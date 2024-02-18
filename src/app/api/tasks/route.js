@@ -3,12 +3,25 @@ import { prisma } from "@/libs/prisma"
 
 const GET = async () => {
     const tasks = await prisma.task.findMany()
-    console.log(tasks);
-    return NextResponse.json("Getting Tasks")
+
+    return NextResponse.json({
+        type: `Getting Tasks`,
+        data: tasks
+    })
 }
 
-const POST = () => {
-    return NextResponse.json("Creating Tasks")
+const POST = async (request) => {
+    const {title, description} = await request.json() 
+    const newTask = await prisma.task.create({
+        data: {
+            title, description
+        }
+    })
+
+    return NextResponse.json({
+        type: `Creating Tasks`,
+        data: newTask
+    })
 }
 
 export {GET, POST}
