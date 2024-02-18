@@ -10,4 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-//Model to download data
+//model to save data
+model Task {
+  id Int @id @default(autoincrement())
+  title String
+  description String?
+  createdAt DateTime @default(now())
+}
