@@ -10,16 +10,38 @@ const GET = async (request, {params}) => {
     })
     return NextResponse.json({
         type: `Getting task ${params.id}`,
-        data: task
+        data: task ? task : 'Task not found'
     })   
 }
 
 const PUT = async (request, {params}) => {
-    return NextResponse.json(`Updating task ${params.id}`)   
+    const id = parseInt(params.id)
+    const {title, description} = await request.json()
+    const updateTask = await prisma.task.update({
+        data: {
+            title, description
+        },
+        where: {
+            id: id
+        }
+    })
+    return NextResponse.json({
+        type: `Updating task ${params.id}`,
+        data: updateTask ? updateTask : 'Task not found'
+    })   
 }
 
 const DELETE = async (request, {params}) => {
-    return NextResponse.json(`Deleting task ${params.id}`)   
+    const id = parseInt(params.id)
+    const taskRemove = await prisma.task.delete({
+        where: {
+            id: id
+        }
+    })
+    return NextResponse.json({
+        type: `Deleting task ${params.id}`,
+        data: taskRemove ? taskRemove : "Task not found"
+    })   
 }
 
 export {GET, PUT, DELETE}

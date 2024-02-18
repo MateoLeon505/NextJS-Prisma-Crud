@@ -6,7 +6,7 @@ const GET = async () => {
 
     return NextResponse.json({
         type: `Getting All Tasks`,
-        data: tasks
+        data: tasks.length > 0 ? tasks : 'There are no tasks'
     })
 }
 
@@ -20,7 +20,7 @@ const POST = async (request) => {
 
     return NextResponse.json({
         type: `Creating Tasks`,
-        data: newTask
+        data: newTask ? newTask : 'Error creating tasks'
     })
 }
 
