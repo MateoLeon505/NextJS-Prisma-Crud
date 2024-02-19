@@ -67,7 +67,7 @@ const NewPage = ({params}) => {
  
   return (
     <div className='h-[calc(100vh-7rem)] flex justify-center items-center'>
-      <form className='bg-slate-800 p-10 sm:w-1/2 lg:w-1/4' onSubmit={handleSubmit}>
+      <form className='bg-slate-800 p-10 sm:w-1/2 lg:w-1/4 rounded-lg' onSubmit={handleSubmit}>
 
         <label htmlFor="title" className='text-sm font-bold'>Task Title</label>
         <input type="text" id='title' name='title' value={task.title} placeholder='Title' onChange={handleChange} 

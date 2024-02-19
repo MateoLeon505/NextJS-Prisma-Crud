@@ -8,7 +8,7 @@ const NavBar = () => {
             <Link href='/' className='font-bold text-3xl md:mb-0'>Next-Crud</Link>  
             <ul className='flex gap-x-10 text-lg font-bold'>
                 <li>
-                    <Link href='/' className='text-slate-300 hover:text-slate-200 '>
+                    <Link href='/' className='text-slate-300 hover:text-slate-200'>
                         Tasks
                     </Link>
                 </li>
