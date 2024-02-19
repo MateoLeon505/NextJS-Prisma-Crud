@@ -4,9 +4,12 @@ const loadTasks = async () => {
   const res = await fetch('http://localhost:3000/api/tasks', {
     method: 'GET',
     cache: 'no-store',
+    next: { revalidate: 1 },
   })
-  const data = await res.json()
-  return data.data
+  let data = await res.json()
+  data = data.data
+  console.log(data);
+  return data
 }
 
 const Home = async () => {

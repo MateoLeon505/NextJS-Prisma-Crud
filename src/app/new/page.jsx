@@ -31,6 +31,7 @@ const NewPage = ({params}) => {
 
     if (params.id) {
       const res = await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
+        next: { revalidate: 1 },
         method: 'PUT',
         body: JSON.stringify({title, description}),
         headers: {
@@ -42,6 +43,7 @@ const NewPage = ({params}) => {
     } 
     else {
       const res = await fetch(`http://localhost:3000//api/tasks`, {
+        next: { revalidate: 1 },
         method: 'POST',
         body: JSON.stringify({title, description}),
         headers: {
