@@ -14,7 +14,7 @@ const Home = async () => {
   const tasks = await loadTasks()
   return (
     <section className="container mx-auto py-10 px-5">
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid xs:grid-cols-1 sm:grid-cols-2  md:grid-cols-3 gap-3">
         {tasks.map((task) => (
           <TakCard key={task.id} task={task}/>
         ))}
