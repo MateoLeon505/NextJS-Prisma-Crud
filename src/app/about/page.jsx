@@ -18,10 +18,10 @@ const About = () => {
           </p>
           <h3 className="text-3xl font-bold my-5 text-center">Find me on</h3>
           <div className="container flex row justify-center gap-10">
-            <Link href='https://github.com/MateoLeon505' target="blank">
+            <Link href='https://www.linkedin.com/in/mateo-le%C3%B3n-097b57268/' target="blank">
               <FaLinkedin className="text-slate-400 text-5xl hover:text-white hover:scale-110 "/>
             </Link>
-            <Link href='https://github.com/MateoLeon505 target="blank"'>
+            <Link href='https://github.com/MateoLeon505' target="blank">
               <FaSquareGithub className="text-slate-400 text-5xl hover:text-white hover:scale-110"/>
             </Link>
           </div>

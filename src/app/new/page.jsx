@@ -60,7 +60,6 @@ const NewPage = ({params}) => {
       method: "DELETE"
     })
     const data = await res.json()
-    console.log(data);
     router.refresh()
     router.push('/')
   }
@@ -85,7 +84,7 @@ const NewPage = ({params}) => {
               Delete 
             </button>
           )}
-          <button className='bg-blue-600 hover:bg-blue-500 py-2 px-4 text-white rounded-md' type='submit'>
+          <button className='bg-blue-600 hover:bg-blue-500 py-2 px-4 text-white rounded-md' type='submit' disabled={!task.title}>
             {params.id ? 'Update' : 'Create'}
           </button>
         </div>
