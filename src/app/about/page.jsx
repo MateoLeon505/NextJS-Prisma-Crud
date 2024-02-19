@@ -14,7 +14,7 @@ const About = () => {
             I developed it with the next de fazt code course.
           </p>
           <p className="mb-15">
-            The app allows users to add new tasks, edit details of existing tasks, and delete tasks.
+            The app allows users to add new tasks, edit details of existing tasks and delete tasks.
           </p>
           <h3 className="text-3xl font-bold my-5 text-center">Find me on</h3>
           <div className="container flex row justify-center gap-10">
