@@ -30,7 +30,15 @@ const NewPage = ({params}) => {
     const description = task.description
 
     if (params.id) {
-      console.log('Updating task');
+      const res = await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
+        method: 'PUT',
+        body: JSON.stringify({title, description}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      const data = await res.json()
+      console.log(data) 
     } 
     else {
       const res = await fetch(`http://localhost:3000//api/tasks`, {
@@ -43,6 +51,7 @@ const NewPage = ({params}) => {
       const data = await res.json()
       console.log(data) 
     }
+    router.refresh()
     router.push('/')
   } 
 
@@ -60,7 +69,7 @@ const NewPage = ({params}) => {
         </textarea>
 
         <button className='bg-blue-600 hover:bg-blue-400 py-2 px-4 text-white rounded-md' type='submit'>
-          Create
+          {params.id ? 'Update' : 'Create'}
         </button>
 
       </form>

@@ -1,15 +1,17 @@
 import TakCard from "@/components/taskCard"
 
 const loadTasks = async () => {
-  const res = await fetch('http://localhost:3000/api/tasks')
+  const res = await fetch('http://localhost:3000/api/tasks', {
+    method: 'GET',
+    cache: 'no-store',
+  })
   const data = await res.json()
-  console.log(data);
+  console.log(data.data);
   return data.data
 }
 
 const Home = async () => {
   const tasks = await loadTasks()
-
   return (
     <section className="container mx-auto py-10 px-5">
       <div className="grid grid-cols-3 gap-3">

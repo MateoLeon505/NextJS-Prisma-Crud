@@ -1,3 +1,4 @@
+import CreateTaskButton from "@/components/createTaskButton";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +14,7 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body className={inter.className}>
         {children}
+        <CreateTaskButton/>
       </body>
     </html>
   );
