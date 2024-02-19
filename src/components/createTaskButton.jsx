@@ -2,6 +2,7 @@
 import React from 'react'
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import { IoMdAddCircleOutline } from "react-icons/io"
 
 const CreateTaskButton = () => {
     const pathname = usePathname()
@@ -10,7 +11,9 @@ const CreateTaskButton = () => {
     return (
       <div>
         {pathname === '/' &&
-        <button onClick={() => {router.push('/new')}}>+</button>}
+        <button onClick={() => {router.push('/new')}}>
+          <IoMdAddCircleOutline/>
+        </button>}
       </div>
   )
 }
