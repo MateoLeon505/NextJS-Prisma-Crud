@@ -7,8 +7,7 @@ const Home = () => {
 
   useEffect(() => {
     fetch('http://localhost:3000/api/tasks', {
-      method: 'GET',
-      cache: 'no-store',
+      method: 'GET'
     })
     .then(res => res.json())
     .then(data => data = data.data) 
