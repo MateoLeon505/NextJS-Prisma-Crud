@@ -11,7 +11,6 @@ const About = () => {
           <p className="mb-7">
             I´m Mateo León. This project is a CRUD (Create, Read, Update, Delete) developed to manage tasks.
             This project uses Next.js, Rest API, Prisma, React icons and an SQLite database to store the tasks.
-            I developed it with the next de fazt code course.
           </p>
           <p className="mb-15">
             The app allows users to add new tasks, edit details of existing tasks and delete tasks.

@@ -30,38 +30,31 @@ const NewPage = ({params}) => {
     const description = task.description
 
     if (params.id) {
-      const res = await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
-        next: { revalidate: 1 },
+      await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
         method: 'PUT',
         body: JSON.stringify({title, description}),
         headers: {
           'Content-Type': 'application/json'
         }
       })
-      const data = await res.json()
-      console.log(data) 
     } 
     else {
-      const res = await fetch(`http://localhost:3000//api/tasks`, {
-        next: { revalidate: 1 },
+      await fetch(`http://localhost:3000//api/tasks`, {
         method: 'POST',
         body: JSON.stringify({title, description}),
         headers: {
           'Content-Type': 'application/json'
         }
       })
-      const data = await res.json()
-      console.log(data) 
     }
     router.refresh()
     router.push('/')
   } 
 
   const handleDelete = async () => {
-    const res = await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
+    await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
       method: "DELETE"
     })
-    const data = await res.json()
     router.refresh()
     router.push('/')
   }

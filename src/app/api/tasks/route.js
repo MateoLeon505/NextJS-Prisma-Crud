@@ -4,11 +4,12 @@ import { prisma } from "@/libs/prisma"
 const GET = async () => {
     try {
         const tasks = await prisma.task.findMany()
-        // console.log(tasks);
-        return NextResponse.json({
+        return NextResponse.json(
+        {
             type: `Getting All Tasks`,
-            data: tasks
-        })   
+            data: tasks ? tasks : 'Tasks not found'
+        }
+        )   
     } 
     catch (error) {
         return NextResponse.json({
