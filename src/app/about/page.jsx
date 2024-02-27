@@ -9,8 +9,8 @@ const About = () => {
         <h3 className="text-5xl font-bold my-5 text-center">About</h3>
         <div className="xs:text-xs sm:text-xl" >
           <p className="mb-7">
-            I´m Mateo León. This project is a CRUD (Create, Read, Update, Delete) developed to manage tasks.
-            This project uses Next.js, Rest API, Prisma, React icons and an SQLite database to store the tasks.
+            My name is Mateo León. This project is a CRUD (Create, Read, Update, Delete) developed to manage tasks.
+            It uses Next.js, Tailwind Css, a Rest API, Prisma, React icons and an SQLite database to store the tasks.
           </p>
           <p className="mb-15">
             The app allows users to add new tasks, edit details of existing tasks and delete tasks.
