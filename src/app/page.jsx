@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import TakCard from "@/components/taskCard"
 
-export const revalidate = 60;
+export const dynamic = 'force-dinamyc';
 
 const Home = () => {
   const [ tasks, setTasks ] = useState([])
