@@ -8,7 +8,7 @@ const Home = () => {
   const [ tasks, setTasks ] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/tasks', {
+    fetch(`/api/tasks`, {
       method: 'GET'
     })
     .then(res => res.json())

@@ -12,7 +12,7 @@ const NewPage = ({params}) => {
 
   useEffect(() => {
     params.id &&
-      fetch(`http://localhost:3000/api/tasks/${params.id}`)
+      fetch(`/api/tasks/${params.id}`)
       .then(res => res.json())
       .then(data => data = data.data) 
       .then(data => setTask({...task, title: data.title, description: data.description})) 
@@ -30,7 +30,7 @@ const NewPage = ({params}) => {
     const description = task.description
 
     if (params.id) {
-      await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
+      await fetch(`/api/tasks/${params.id}`, {
         method: 'PUT',
         body: JSON.stringify({title, description}),
         headers: {
@@ -39,7 +39,7 @@ const NewPage = ({params}) => {
       })
     } 
     else {
-      await fetch(`http://localhost:3000//api/tasks`, {
+      await fetch(`/api/tasks`, {
         method: 'POST',
         body: JSON.stringify({title, description}),
         headers: {
@@ -52,7 +52,7 @@ const NewPage = ({params}) => {
   } 
 
   const handleDelete = async () => {
-    await fetch(`http://localhost:3000//api/tasks/${params.id}`, {
+    await fetch(`/api/tasks/${params.id}`, {
       method: "DELETE"
     })
     router.refresh()
